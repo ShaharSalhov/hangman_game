@@ -28,3 +28,21 @@ body {
   margin: 50px;
   padding: 5px;
 }
+
+.rightLetter {
+  color: green;
+  margin: 10px;
+  padding: 10px;
+}
+
+.wrongLetter {
+  color: gray;
+  margin: 10px;
+  padding: 10px;
+}
+
+.notChosenYet {
+  color: black;
+  margin: 10px;
+  padding: 10px;
+}

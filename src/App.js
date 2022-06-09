@@ -20,9 +20,9 @@ const allLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 
 function App() {
 
-  const [chosenWordAndSubject, setChosenWordAndSubject] = React.useState({})
   const [chosenWord, setChosenWord] = React.useState("")
   const [chosenSubject, setChosenSubject] = React.useState("")
+  const [clickedLetters, setClickedLetters] = React.useState([])
 
 
   const gettingRandomWordAndSubject = () => {
@@ -32,30 +32,33 @@ function App() {
     let numberOfWordsInRandomSelectedSubject = vocabulary[randomSubjectIndex].words.length
     let randomWordIndex = Math.floor(Math.random() * numberOfWordsInRandomSelectedSubject);
 
-    let chosenWord = vocabulary[randomSubjectIndex].words[randomWordIndex];
-    let chosenSubject = vocabulary[randomSubjectIndex].subject
+    let chosenRandomWord = vocabulary[randomSubjectIndex].words[randomWordIndex];
+    let chosenRandomSubject = vocabulary[randomSubjectIndex].subject
 
-    setChosenWordAndSubject(
-      {
-        "randomChosenWord": chosenWord,
-        "randomChosenSubject": chosenSubject,
-      }
-    )
-
-    return chosenWordAndSubject;
+    setChosenWord(chosenRandomWord)
+    setChosenSubject(chosenRandomSubject)
   }
 
-  const coloringLettersBoard = () => {
+  const coloringLettersBoard = (letter) => {
 
+    if (chosenWord.includes(letter) && clickedLetters.includes(letter)) {
+      console.log("rightLetter")
+      return "rightLetter"
 
+    } else if (!chosenWord.includes(letter) && clickedLetters.includes(letter)) {
+      console.log("wrongLetter")
+      return "wrongLetter"
+
+    } else {
+      console.log("notChosenYet")
+      return "notChosenYet"
+    }
   }
 
 
 
   React.useEffect( () => {
     gettingRandomWordAndSubject()
-    setChosenWord(chosenWordAndSubject.randomChosenWord)
-    setChosenSubject(chosenWordAndSubject.randomChosenSubject)
   }, [])
   
   
@@ -76,7 +79,7 @@ function App() {
 
         <div className='guessBoard'>
 
-          <p>subject:</p>
+          <p>subject: {chosenSubject} </p>
 
           guess
 
@@ -91,9 +94,10 @@ function App() {
           
           <button
            id={letter} 
-           onClick={ () => coloringLettersBoard(letter) 
-          }> 
-          
+           onClick= { () => setClickedLetters([...clickedLetters, letter])}
+           className= {coloringLettersBoard(letter)}
+          >
+
           {letter} 
 
           </button> 
