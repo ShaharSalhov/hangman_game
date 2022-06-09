@@ -24,7 +24,6 @@ function App() {
   const [chosenSubject, setChosenSubject] = React.useState("")
   const [clickedLetters, setClickedLetters] = React.useState([])
 
-
   const gettingRandomWordAndSubject = () => {
 
     let numberOfSubjects = vocabulary.length;
@@ -42,20 +41,17 @@ function App() {
   const coloringLettersBoard = (letter) => {
 
     if (chosenWord.includes(letter) && clickedLetters.includes(letter)) {
-      console.log("rightLetter")
       return "rightLetter"
 
     } else if (!chosenWord.includes(letter) && clickedLetters.includes(letter)) {
-      console.log("wrongLetter")
       return "wrongLetter"
 
     } else {
-      console.log("notChosenYet")
       return "notChosenYet"
     }
   }
 
-
+  
 
   React.useEffect( () => {
     gettingRandomWordAndSubject()
@@ -81,7 +77,15 @@ function App() {
 
           <p>subject: {chosenSubject} </p>
 
-          guess
+          <div className='guessLines'>
+            {
+              chosenWord.split("").map( (l) => (
+                <p>
+                    {clickedLetters.includes(l) ? l : "_"} 
+                </p>
+              ))
+            }
+          </div>
 
         </div>
 
@@ -90,7 +94,7 @@ function App() {
 
       <div className='lettersBoard'>
 
-        {allLetters.map ( (letter) => (
+        {allLetters.map( (letter) => (
           
           <button
            id={letter} 
