@@ -84,9 +84,23 @@ function App() {
     gettingRandomWordAndSubject()
   }
 
+  const handleKeyPress = (event) => {
+    setClickedLetters(existingClickedLetters => {
+      if (existingClickedLetters.includes(event.key) || !allLetters.includes(event.key)) {
+        return existingClickedLetters
+      }
+      return [...existingClickedLetters, event.key]
+      })
+    }
+
+
+
   React.useEffect( () => {
     gettingRandomWordAndSubject()
+    document.addEventListener('keydown', handleKeyPress)
   }, [])
+
+  
   
   
   return (
@@ -125,13 +139,13 @@ function App() {
             key={letter}
             id={letter} 
             onClick= { () => {
-            setClickedLetters(existingClickedLetters => {
-              if (existingClickedLetters.includes(letter)) {
-                return existingClickedLetters
-              }
-              return [...existingClickedLetters, letter]
-              })
-            }}
+              setClickedLetters(existingClickedLetters => {
+                if (existingClickedLetters.includes(letter)) {
+                  return existingClickedLetters
+                }
+                return [...existingClickedLetters, letter]
+                })
+              }}
             className= {coloringLettersBoard(letter)}
           >
           {letter} 
