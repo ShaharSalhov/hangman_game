@@ -1,5 +1,6 @@
 import React from 'react';
 import './GameOver.css';
+import NewGameButton from './NewGame';
 
  function GameOverModal(props) {
 
@@ -21,7 +22,7 @@ import './GameOver.css';
           </div>
 
           <div className='modalFooter'>
-              <button className='button' onClick={props.onClose}> Close </button>
+              <NewGameButton onClick={props.onClose}/>
           </div>
 
         </div>

@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import GameOverModal from './GameOver';
+import NewGameButton from './NewGame';
 
 const vocabulary = [
   {
@@ -55,7 +56,6 @@ function App() {
   }
 
   
-  
   const newGameClicking = () => {
     setClickedLetters([]);
     gettingRandomWordAndSubject()
@@ -69,7 +69,6 @@ function App() {
       return [...existingClickedLetters, event.key]
       })
     }
-
 
 
   React.useEffect( () => {
@@ -125,7 +124,14 @@ function App() {
 
           <img src={imgSrc} alt="hangman" width="500" height="600"></img>
 
-          <GameOverModal show={show} onClose={ () => setShow(false) } title="GAME OVER"  />
+          <GameOverModal 
+            show={show} 
+            onClose={ () => {
+              setShow(false)
+              newGameClicking()
+              } } 
+            title="GAME OVER" 
+          />
 
         </div>
 
@@ -144,7 +150,7 @@ function App() {
 
           </div>
 
-          <button id="newGameButton" onClick={newGameClicking}>New Game</button>
+          <NewGameButton onClick={newGameClicking} />
         </div>
       </div>
 
