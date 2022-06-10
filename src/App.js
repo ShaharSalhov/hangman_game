@@ -111,7 +111,7 @@ function App() {
       }
     
     
-  }, [clickedLetters])
+  }, [clickedLetters, chosenWord])
   
   
   
