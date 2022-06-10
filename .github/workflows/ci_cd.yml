@@ -1,0 +1,27 @@
+name: CI & CD
+on: [push]
+permissions: 
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.13.0
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: github_page
+          folder: build
