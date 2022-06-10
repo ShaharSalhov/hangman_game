@@ -25,6 +25,7 @@ function App() {
   const [chosenSubject, setChosenSubject] = React.useState("")
   const [clickedLetters, setClickedLetters] = React.useState([])
   const [show, setShow] = useState(false)
+  const [imgSrc, setImgSrc] = useState("")
 
   const gettingRandomWordAndSubject = () => {
 
@@ -53,33 +54,7 @@ function App() {
     }
   }
 
-  const choosingPicture = () => {
-
-    let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
-
-    switch(numberOfErrors) {
-      case 0:
-        return "/pics/0.png"
-
-      case 1:
-        return "/pics/1.png"
-
-      case 2:
-        return "/pics/2.png"
-
-      case 3:
-        return "/pics/3.png"
-
-      case 4:
-        return "/pics/4.png"
-
-      case 5:
-        return "/pics/5.png"
-
-      default:
-        return "/pics/6.png"
-    }
-  }
+  
   
   const newGameClicking = () => {
     setClickedLetters([]);
@@ -102,6 +77,42 @@ function App() {
     document.addEventListener('keydown', handleKeyPress)
   }, [])
 
+  React.useEffect( () => {
+
+      let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
+  
+      switch(numberOfErrors) {
+        case 0:
+          setImgSrc("/pics/0.png")
+          break; 
+  
+        case 1:
+          setImgSrc("/pics/1.png") 
+          break; 
+  
+        case 2:
+          setImgSrc("/pics/2.png") 
+          break; 
+  
+        case 3:
+          setImgSrc("/pics/3.png") 
+          break; 
+  
+        case 4:
+          setImgSrc("/pics/4.png") 
+          break; 
+  
+        case 5:
+          setImgSrc("/pics/5.png") 
+          break; 
+  
+        default:
+          setShow(true);
+          setImgSrc("/pics/6.png") 
+      }
+    
+    
+  }, [clickedLetters])
   
   
   
@@ -112,9 +123,8 @@ function App() {
 
         <div className='graphBoard'>
 
-          <img src={choosingPicture()} alt="hangman" width="500" height="600"></img>
+          <img src={imgSrc} alt="hangman" width="500" height="600"></img>
 
-          <button onClick={ () => setShow(true) }>Show modal</button>
           <GameOverModal show={show} onClose={ () => setShow(false) } title="GAME OVER"  />
 
         </div>
