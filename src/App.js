@@ -79,7 +79,7 @@ function App() {
   React.useEffect( () => {
 
       let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
-      console.log(window.location.pathname)
+
       switch(numberOfErrors) {
         case 0:
           setImgSrc(`${window.location.pathname}pics/0.png`)
