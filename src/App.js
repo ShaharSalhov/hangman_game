@@ -1,5 +1,6 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
+import GameOverModal from './GameOver';
 
 const vocabulary = [
   {
@@ -23,6 +24,7 @@ function App() {
   const [chosenWord, setChosenWord] = React.useState("")
   const [chosenSubject, setChosenSubject] = React.useState("")
   const [clickedLetters, setClickedLetters] = React.useState([])
+  const [show, setShow] = useState(false)
 
   const gettingRandomWordAndSubject = () => {
 
@@ -109,7 +111,12 @@ function App() {
       <div className='upperPart'>
 
         <div className='graphBoard'>
+
           <img src={choosingPicture()} alt="hangman" width="500" height="600"></img>
+
+          <button onClick={ () => setShow(true) }>Show modal</button>
+          <GameOverModal show={show} onClose={ () => setShow(false) } title="GAME OVER"  />
+
         </div>
 
         <div id="guessPlusButton">
@@ -159,3 +166,6 @@ function App() {
 }
 
 export default App;
+
+
+// add GameOverModal to render when pic 6 is being renderd + block user from continue playing
