@@ -79,35 +79,35 @@ function App() {
   React.useEffect( () => {
 
       let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
-  
+      console.log(window.location.pathname)
       switch(numberOfErrors) {
         case 0:
-          setImgSrc(`${window.location.origin}/pics/0.png`)
+          setImgSrc(`${window.location.pathname}pics/0.png`)
           break; 
   
         case 1:
-          setImgSrc(`${window.location.origin}/pics/1.png`) 
+          setImgSrc(`${window.location.pathname}pics/1.png`) 
           break; 
   
         case 2:
-          setImgSrc(`${window.location.origin}/pics/2.png`) 
+          setImgSrc(`${window.location.pathname}pics/2.png`) 
           break; 
   
         case 3:
-          setImgSrc(`${window.location.origin}/pics/3.png`) 
+          setImgSrc(`${window.location.pathname}pics/3.png`) 
           break; 
   
         case 4:
-          setImgSrc(`${window.location.origin}/pics/4.png`) 
+          setImgSrc(`${window.location.pathname}pics/4.png`) 
           break; 
   
         case 5:
-          setImgSrc(`${window.location.origin}/pics/5.png`) 
+          setImgSrc(`${window.location.pathname}pics/5.png`) 
           break; 
   
         default:
           setShow(true);
-          setImgSrc(`${window.location.origin}/pics/6.png`) 
+          setImgSrc(`${window.location.pathname}pics/6.png`) 
       }
     
     
