@@ -82,32 +82,32 @@ function App() {
   
       switch(numberOfErrors) {
         case 0:
-          setImgSrc("/pics/0.png")
+          setImgSrc(`${window.location.origin}/pics/0.png`)
           break; 
   
         case 1:
-          setImgSrc("/pics/1.png") 
+          setImgSrc(`${window.location.origin}/pics/1.png`) 
           break; 
   
         case 2:
-          setImgSrc("/pics/2.png") 
+          setImgSrc(`${window.location.origin}/pics/2.png`) 
           break; 
   
         case 3:
-          setImgSrc("/pics/3.png") 
+          setImgSrc(`${window.location.origin}/pics/3.png`) 
           break; 
   
         case 4:
-          setImgSrc("/pics/4.png") 
+          setImgSrc(`${window.location.origin}/pics/4.png`) 
           break; 
   
         case 5:
-          setImgSrc("/pics/5.png") 
+          setImgSrc(`${window.location.origin}/pics/5.png`) 
           break; 
   
         default:
           setShow(true);
-          setImgSrc("/pics/6.png") 
+          setImgSrc(`${window.location.origin}/pics/6.png`) 
       }
     
     
