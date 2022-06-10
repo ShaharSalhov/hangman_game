@@ -51,61 +51,91 @@ function App() {
     }
   }
 
+  const choosingPicture = () => {
+
+    let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
+
+    switch(numberOfErrors) {
+      case 0:
+        return "/pics/0.png"
+
+      case 1:
+        return "/pics/1.png"
+
+      case 2:
+        return "/pics/2.png"
+
+      case 3:
+        return "/pics/3.png"
+
+      case 4:
+        return "/pics/4.png"
+
+      case 5:
+        return "/pics/5.png"
+
+      default:
+        return "/pics/6.png"
+    }
+  }
   
+  const newGameClicking = () => {
+    setClickedLetters([]);
+    gettingRandomWordAndSubject()
+  }
 
   React.useEffect( () => {
     gettingRandomWordAndSubject()
   }, [])
   
   
-
   return (
     <div className="App">
 
       <div className='upperPart'>
 
         <div className='graphBoard'>
-
-          <div className='pic'>pic</div>
-
-          <p>Only X more moves to play...</p>
-
+          <img src={choosingPicture()} alt="hangman" width="500" height="600"></img>
         </div>
 
+        <div id="guessPlusButton">
+          <div className='guessBoard'>
+            <p>subject: {chosenSubject} </p>
+            <div className='guessLines'>
+              {
+                chosenWord.split("").map( (l, i) => (
+                  <p key={`${l}-${i}`}>
+                      {clickedLetters.includes(l) ? l : "_"} 
+                  </p>
+                ))
+              }
+            </div>
 
-        <div className='guessBoard'>
-
-          <p>subject: {chosenSubject} </p>
-
-          <div className='guessLines'>
-            {
-              chosenWord.split("").map( (l) => (
-                <p>
-                    {clickedLetters.includes(l) ? l : "_"} 
-                </p>
-              ))
-            }
           </div>
 
+          <button id="newGameButton" onClick={newGameClicking}>New Game</button>
         </div>
-
       </div>
-      
 
       <div className='lettersBoard'>
 
         {allLetters.map( (letter) => (
           
           <button
-           id={letter} 
-           onClick= { () => setClickedLetters([...clickedLetters, letter])}
-           className= {coloringLettersBoard(letter)}
+            key={letter}
+            id={letter} 
+            onClick= { () => {
+            setClickedLetters(existingClickedLetters => {
+              if (existingClickedLetters.includes(letter)) {
+                return existingClickedLetters
+              }
+              return [...existingClickedLetters, letter]
+              })
+            }}
+            className= {coloringLettersBoard(letter)}
           >
-
           {letter} 
-
           </button> 
-
         ) )}
         
       </div>
