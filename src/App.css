@@ -1,4 +1,6 @@
-/* html { 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Indie+Flower&family=Montserrat:wght@100&family=Orelega+One&family=Sunflower&display=swap');
+
+html { 
   background: url("/public/pics/board3.jpeg") fixed center no-repeat ; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6,23 +8,14 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-} */
-
-/* body {
-  margin: 10px 15px 15px 10px;
-  width: 100%;
-  padding: 10px;
-} */
-
-body {
-  background-color: rgb(202, 181, 154);
 }
 
 .App {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 5px red solid;
+  font-family: 'Caveat', cursive;
+  color: white;
 }
 
 .upperPart{
@@ -31,7 +24,7 @@ body {
   align-items: center;
   margin: auto;
   width: 95%; 
-  border: solid rgb(171, 251, 0) 3px;
+  padding-bottom: 20px;
 }
 
 .lettersBoard {
@@ -39,15 +32,12 @@ body {
   justify-content: center;
   margin: auto;
   width: 95%; 
-  border: solid black 2px;
 }
-
 
 
 .graphBoard {
   width: 30%;
   height: 60%;
-  border: brown 5px solid;
   justify-content: center;
   align-items: center;
 }
@@ -59,11 +49,10 @@ body {
 }
 
 .guessBoard {
-  font-size: 50px;
+  font-size: 60px;
   align-items: center;
   display: flex;
   flex-direction: column;
-  border: solid black 2px;
   margin: auto;
   height: 60%;
   padding: 10px;
@@ -74,27 +63,25 @@ body {
   display: flex;
   flex-direction: row;
   gap: 5px;
+  font-family: 'Caveat', cursive;
 }
 
-
-
-
-
+.lettersButtons {
+  font-family: 'Caveat', cursive;
+  font-size: larger;
+  font-weight: bolder;
+  padding: 10px;
+  margin: 10px;
+}
 
 .rightLetter {
   color: green;
-  margin: 10px;
-  padding: 10px;
 }
 
 .wrongLetter {
   color: gray;
-  margin: 10px;
-  padding: 10px;
 }
 
 .notChosenYet {
   color: black;
-  margin: 10px;
-  padding: 10px;
 }

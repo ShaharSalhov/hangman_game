@@ -10,6 +10,7 @@
     justify-content: center;
     z-index: 1;
     text-align: center;
+    font-family: 'Caveat', cursive;
 }
 
 .modalContent {
@@ -19,6 +20,7 @@
     height: 30%;
     background-color: lavender;
     border-radius: 5px;
+    font-size: larger;
 }
 
 .modalHeader, .modalFooter {
@@ -36,7 +38,3 @@
     border-bottom: 1px solid #789;
 }
 
-
-.button {
-
-}

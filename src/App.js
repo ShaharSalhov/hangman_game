@@ -184,7 +184,7 @@ function App() {
                 return [...existingClickedLetters, letter]
                 })
               }}
-            className= {coloringLettersBoard(letter)}
+            className={`lettersButtons ${coloringLettersBoard(letter)}`}
           >
           {letter} 
           </button> 
