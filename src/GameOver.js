@@ -2,9 +2,9 @@ import React from 'react';
 import './GameOver.css';
 import NewGameButton from './NewGame';
 
- function GameOverModal(props) {
+ function GameOverModal( { show, isWining, title, onClose} ) {
 
-    if (!props.show) {
+    if (!show) {
         return null
     }
 
@@ -14,15 +14,15 @@ import NewGameButton from './NewGame';
         <div className='modalContent'>
 
             <div className='modalHeader'>
-                <h4 className={props.title}>GAME OVER</h4>
+                <h4 className={title}> { isWining ? "Excellent Job!" : "GAME OVER" } </h4>
             </div>
 
-          <div className={props.children}>
-              this is modal body
+          <div className="children">
+            { isWining ? "You won the game!" : "better luck next time" }
           </div>
 
           <div className='modalFooter'>
-              <NewGameButton onClick={props.onClose}/>
+              <NewGameButton onClick={onClose}/>
           </div>
 
         </div>

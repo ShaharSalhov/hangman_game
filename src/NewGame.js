@@ -1,10 +1,10 @@
 import React from "react";
 import './NewGame.css';
 
- function NewGameButton(props) {
+ function NewGameButton( { onClick }) {
 
     return (
-        <button className="newGameButton" onClick={props.onClick}>New Game</button>
+        <button className="newGameButton" onClick={onClick}>New Game</button>
     );
   }
 

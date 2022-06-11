@@ -26,7 +26,8 @@ function App() {
   const [chosenSubject, setChosenSubject] = React.useState("")
   const [clickedLetters, setClickedLetters] = React.useState([])
   const [show, setShow] = useState(false)
-  const [imgSrc, setImgSrc] = useState("")
+  const [imgSrc, setImgSrc] = useState(`${window.location.pathname}pics/0.png`)
+  const [isWining, setIsWining] = useState(false)
 
   const gettingRandomWordAndSubject = () => {
 
@@ -40,6 +41,7 @@ function App() {
 
     setChosenWord(chosenRandomWord)
     setChosenSubject(chosenRandomSubject)
+    setIsWining(false)
   }
 
   const coloringLettersBoard = (letter) => {
@@ -78,42 +80,53 @@ function App() {
 
   React.useEffect( () => {
 
-      let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
-
-      switch(numberOfErrors) {
-        case 0:
-          setImgSrc(`${window.location.pathname}pics/0.png`)
-          break; 
-  
-        case 1:
-          setImgSrc(`${window.location.pathname}pics/1.png`) 
-          break; 
-  
-        case 2:
-          setImgSrc(`${window.location.pathname}pics/2.png`) 
-          break; 
-  
-        case 3:
-          setImgSrc(`${window.location.pathname}pics/3.png`) 
-          break; 
-  
-        case 4:
-          setImgSrc(`${window.location.pathname}pics/4.png`) 
-          break; 
-  
-        case 5:
-          setImgSrc(`${window.location.pathname}pics/5.png`) 
-          break; 
-  
-        default:
-          setShow(true);
-          setImgSrc(`${window.location.pathname}pics/6.png`) 
+      if (chosenWord.length === 0) {
+        return
       }
+      
+      let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
+      let wining = chosenWord.split("").every((l) => clickedLetters.includes(l))
+
+      if (wining) {
+        setIsWining(true)
+        setShow(true)
+
+      } else {
+
+        switch(numberOfErrors) {
+          case 0:
+            setImgSrc(`${window.location.pathname}pics/0.png`)  
+            break; 
     
+          case 1:
+            setImgSrc(`${window.location.pathname}pics/1.png`) 
+            break; 
+    
+          case 2:
+            setImgSrc(`${window.location.pathname}pics/2.png`) 
+            break; 
+    
+          case 3:
+            setImgSrc(`${window.location.pathname}pics/3.png`) 
+            break; 
+    
+          case 4:
+            setImgSrc(`${window.location.pathname}pics/4.png`) 
+            break; 
+    
+          case 5:
+            setImgSrc(`${window.location.pathname}pics/5.png`) 
+            break; 
+    
+          default:
+            setShow(true);
+            setImgSrc(`${window.location.pathname}pics/6.png`) 
+        }
+      }
     
   }, [clickedLetters, chosenWord])
   
-  
+
   
   return (
     <div className="App">
@@ -126,6 +139,7 @@ function App() {
 
           <GameOverModal 
             show={show} 
+            isWining={isWining}
             onClose={ () => {
               setShow(false)
               newGameClicking()
