@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hangman_game/static/css/main.ee36c3dc.css",
+    "main.css": "/hangman_game/static/css/main.3f22c034.css",
     "main.js": "/hangman_game/static/js/main.ba528765.js",
     "index.html": "/hangman_game/index.html",
-    "main.ee36c3dc.css.map": "/hangman_game/static/css/main.ee36c3dc.css.map",
+    "main.3f22c034.css.map": "/hangman_game/static/css/main.3f22c034.css.map",
     "main.ba528765.js.map": "/hangman_game/static/js/main.ba528765.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee36c3dc.css",
+    "static/css/main.3f22c034.css",
     "static/js/main.ba528765.js"
   ]
 }
