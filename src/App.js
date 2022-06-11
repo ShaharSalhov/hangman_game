@@ -135,7 +135,7 @@ function App() {
 
         <div className='graphBoard'>
 
-          <img src={imgSrc} alt="hangman" width="500" height="600"></img>
+          <img className='img' src={imgSrc} alt="hangman"></img>
 
           <GameOverModal 
             show={show} 
@@ -196,6 +196,3 @@ function App() {
 }
 
 export default App;
-
-
-// add GameOverModal to render when pic 6 is being renderd + block user from continue playing
