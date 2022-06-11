@@ -149,9 +149,11 @@ function App() {
 
         </div>
 
-        <div id="guessPlusButton">
-          <div className='guessBoard'>
+        <div id="guessPlusButton" className='guessBoard'>
+
+
             <p>subject: {chosenSubject} </p>
+            
             <div className='guessLines'>
               {
                 chosenWord.split("").map( (l, i) => (
@@ -162,9 +164,8 @@ function App() {
               }
             </div>
 
-          </div>
+            <NewGameButton onClick={newGameClicking} />
 
-          <NewGameButton onClick={newGameClicking} />
         </div>
       </div>
 
