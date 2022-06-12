@@ -7,7 +7,7 @@ import myPackageJson from '../package.json';
 const vocabulary = [
   {
     subject: "fruits",
-    words: ["apple", "bannana", "grapes"],
+    words: ["apple", "bannana","grapes"],
   },
   {
     subject: "vegetables",
@@ -24,6 +24,7 @@ const allLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 function App() {
 
   const [chosenWord, setChosenWord] = React.useState("")
+  const [trimmedChosenWord, setTrimmedChosenWord] = React.useState("")
   const [chosenSubject, setChosenSubject] = React.useState("")
   const [clickedLetters, setClickedLetters] = React.useState([])
   const [show, setShow] = useState(false)
@@ -41,6 +42,7 @@ function App() {
     let chosenRandomSubject = vocabulary[randomSubjectIndex].subject
 
     setChosenWord(chosenRandomWord)
+    setTrimmedChosenWord(chosenRandomWord.replace(/\s/g, ''))
     setChosenSubject(chosenRandomSubject)
     setIsWining(false)
   }
@@ -58,7 +60,6 @@ function App() {
     }
   }
 
-  
   const newGameClicking = () => {
     setClickedLetters([]);
     gettingRandomWordAndSubject()
@@ -85,8 +86,8 @@ function App() {
         return
       }
       
-      let numberOfErrors = clickedLetters.filter(letter => !chosenWord.includes(letter)).length;
-      let wining = chosenWord.split("").every((l) => clickedLetters.includes(l))
+      let numberOfErrors = clickedLetters.filter(letter => !trimmedChosenWord.includes(letter)).length;
+      let wining = trimmedChosenWord.split("").every((l) => clickedLetters.includes(l))
 
       if (wining) {
         setIsWining(true)
@@ -125,7 +126,7 @@ function App() {
         }
       }
     
-  }, [clickedLetters, chosenWord])
+  }, [clickedLetters, chosenWord, trimmedChosenWord])
   
 
   
@@ -158,11 +159,13 @@ function App() {
             <div className='guessLines'>
               {
                 chosenWord.split("").map( (l, i) => (
+
                   <p key={`${l}-${i}`}>
-                      {clickedLetters.includes(l) ? l : "_"} 
+                      { l === " " ? "\u00a0" : (clickedLetters.includes(l) ? `${l}` : "_") }
                   </p>
-                ))
-              }
+
+                ) )
+              }    
             </div>
 
             <NewGameButton onClick={newGameClicking} />
