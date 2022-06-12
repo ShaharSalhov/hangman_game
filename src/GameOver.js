@@ -9,21 +9,16 @@ import NewGameButton from './NewGame';
     }
 
     return (
+
       <div className='modal'>
 
         <div className='modalContent'>
 
-            <div className='modalHeader'>
-                <h4 className={title}> { isWining ? "Excellent Job!" : "GAME OVER" } </h4>
-            </div>
+          <h4 className={title}> { isWining ? "Excellent Job!" : "GAME OVER" } </h4>
 
-          <div className="children">
-            { isWining ? "You won the game!" : "better luck next time" }
-          </div>
+            <p className='modalText'> { isWining ? "You won the game!" : "better luck next time" } </p>
 
-          <div className='modalFooter'>
               <NewGameButton onClick={onClose}/>
-          </div>
 
         </div>
 
