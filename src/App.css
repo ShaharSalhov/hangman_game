@@ -98,15 +98,6 @@ html {
   font-family: 'Caveat', cursive;
 }
 
-.lettersButtons {
-  font-family: 'Caveat', cursive;
-  font-size: larger;
-  font-weight: bolder;
-  padding: 10px;
-  margin: 10px;
-}
-
-
 
 @media screen and (max-width: 450px) {
   .lettersBoard {
@@ -129,7 +120,6 @@ html {
   }
 
 
-
 .rightLetter {
   color: green;
 }
@@ -141,3 +131,32 @@ html {
 .notChosenYet {
   color: black;
 }
+
+@media screen and (max-width: 450px) {
+  .lettersButtons {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .lettersButtons {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    font-weight: bolder;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+}
+
+.lettersButtons:active {
+  transform: scale(1.5);
+  box-shadow: 1px 1px rgb(73, 72, 72);
+}
+
+
