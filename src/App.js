@@ -7,14 +7,15 @@ import myPackageJson from '../package.json';
 const vocabulary = [
   {
     subject: "fruits",
-    words: ["apple", "bannana","grapes"],
+    words: ["apple", "bannana","grapes", "apricot", "blackberries", "blueberries", "cherries", "clementine", "fig", "gooseberries", "kiwi", "grapefruit", "mango", "melon", "nectarine", "orange", "pear", "peach", "passion fruit", "physalis", "persimmon"],
   },
   {
     subject: "vegetables",
-    words: ["tomato", "carrot",  "avocado", "lettuce"],
-  }, {
+    words: ["tomato", "carrot",  "avocado", "lettuce", "artichoke", "asparagus", "beetroot", "bell pepper", "broccoli", "brussels sprouts", "cabbage", "lemon", "lime"],
+  }, 
+  {
     subject: "drinks",
-    words: ["water", "soda", "juice"],
+    words: ["water", "soda", "juice", "wine", "coffee", "lemonade", "iced tea", "hot chocolate", "milkshake"],
   },
 ]
 
