@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import GameOverModal from './GameOver';
 import NewGameButton from './NewGame';
+import myPackageJson from '../package.json';
 
 const vocabulary = [
   {
@@ -26,7 +27,7 @@ function App() {
   const [chosenSubject, setChosenSubject] = React.useState("")
   const [clickedLetters, setClickedLetters] = React.useState([])
   const [show, setShow] = useState(false)
-  const [imgSrc, setImgSrc] = useState(`${window.location.pathname}pics/0.png`)
+  const [imgSrc, setImgSrc] = useState(`${myPackageJson.homepage}/pics/0.png`)
   const [isWining, setIsWining] = useState(false)
 
   const gettingRandomWordAndSubject = () => {
@@ -95,32 +96,32 @@ function App() {
 
         switch(numberOfErrors) {
           case 0:
-            setImgSrc(`${window.location.pathname}pics/0.png`)  
+            setImgSrc(`${myPackageJson.homepage}/pics/0.png`)  
             break; 
     
           case 1:
-            setImgSrc(`${window.location.pathname}pics/1.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/1.png`) 
             break; 
     
           case 2:
-            setImgSrc(`${window.location.pathname}pics/2.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/2.png`) 
             break; 
     
           case 3:
-            setImgSrc(`${window.location.pathname}pics/3.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/3.png`) 
             break; 
     
           case 4:
-            setImgSrc(`${window.location.pathname}pics/4.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/4.png`) 
             break; 
     
           case 5:
-            setImgSrc(`${window.location.pathname}pics/5.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/5.png`) 
             break; 
     
           default:
             setShow(true);
-            setImgSrc(`${window.location.pathname}pics/6.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/6.png`) 
         }
       }
     

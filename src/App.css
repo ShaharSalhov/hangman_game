@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Indie+Flower&family=Montserrat:wght@100&family=Orelega+One&family=Sunflower&display=swap');
 
 html { 
-  background: url("/public/pics/board3.jpeg") fixed center no-repeat ; 
+  background: url("../public/pics/board3.jpeg") fixed center no-repeat ; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
