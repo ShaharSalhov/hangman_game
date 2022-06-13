@@ -161,7 +161,7 @@ function App() {
               {
                 chosenWord.split("").map( (l, i) => (
 
-                  <p key={`${l}-${i}`}>
+                  <p className='lines' key={`${l}-${i}`}>
                       { l === " " ? "\u00a0" : (clickedLetters.includes(l) ? `${l}` : "_") }
                   </p>
 
