@@ -134,46 +134,46 @@ function App() {
   return (
     <div className="App">
 
+      <GameOverModal 
+        show={show} 
+        isWining={isWining}
+        onClose={ () => {
+          setShow(false)
+          newGameClicking()
+          } } 
+        title="GAME OVER" 
+      />
+
       <div className='upperPart'>
 
         <div className='graphBoard'>
 
           <img className='img' src={imgSrc} alt="hangman"></img>
 
-          <GameOverModal 
-            show={show} 
-            isWining={isWining}
-            onClose={ () => {
-              setShow(false)
-              newGameClicking()
-              } } 
-            title="GAME OVER" 
-          />
-
         </div>
 
-        <div id="guessPlusButton" className='guessBoard'>
-
+        <div id="subjectBoard" className='subjectBoard'>
 
             <p>subject: {chosenSubject} </p>
-            
-            <div className='guessLines'>
-              {
-                chosenWord.split("").map( (l, i) => (
-
-                  <p className='lines' key={`${l}-${i}`}>
-                      { l === " " ? "\u00a0" : (clickedLetters.includes(l) ? `${l}` : "_") }
-                  </p>
-
-                ) )
-              }    
-            </div>
-
-            <NewGameButton onClick={newGameClicking} />
-
         </div>
+
+       </div>
+
+            
+      <div className='guessLines'>
+        {
+          chosenWord.split("").map( (l, i) => (
+
+            <p key={`${l}-${i}`}>
+                { l === " " ? "\u00a0" : (clickedLetters.includes(l) ? `${l}` : "_") } 
+            </p>
+
+          ) ) 
+        }
       </div>
 
+      <NewGameButton onClick={newGameClicking} />
+      
       <div className='lettersBoard'>
 
         {allLetters.map( (letter) => (

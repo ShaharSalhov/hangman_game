@@ -18,52 +18,72 @@ html {
   color: white;
 }
 
-@media screen and (max-width: 450px) {
-.upperPart{
-  justify-items: center;
+.upperPart {
   display: flex;
   flex-direction: row;
-  margin: auto;
-  margin-top: 20px;
-  width: 90%; 
-  height: 480px;
-}
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
 }
 
-@media screen and (min-width: 451px) {
-.upperPart{
-  justify-items: center;
-  display: flex;
-  align-items: center;
-  margin: auto;
-  margin-top: 30px;
-  width: 95%; 
-  padding-bottom: 20px;
+@media screen and (max-width: 450px) { 
+  .upperPart {
+    margin: auto;
+    margin-top: 30px;
+    width: 90%; 
+  }
 }
+
+@media screen and (min-width: 451px) { 
+  .upperPart {
+    margin-top: 30px;
+  }
 }
 
   .graphBoard {
-    width: 40%;
+    width: 50%;
+    height: 50%;
+  }
+
+  .img {
+    border: 4px solid black;
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+/* @media screen and (min-width: 451px) {
+  .subjectBoard {
+    width: 60%;
     height: 60%;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    font-size: 70px;
   }
-
-
-.img {
-  border: 4px solid black;
-  width: 100%;
-  height: 100%;
 }
 
 @media screen and (max-width: 450px) {
-  .img {
-  border: 4px solid black;
-  width: 100%;
-  height: 65%;
-  margin-top: 30%;
+  .subjectBoard {
+    width: 60%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 40px;
+
   }
-}
+}   */
+
+
+
+
+
 
 @media screen and (max-width: 450px) {
   .guessBoard {
@@ -89,14 +109,24 @@ html {
     width: 60%;
   }
 }
+@media screen and (min-width: 451px) {
+  .guessLines {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-family: 'Caveat', cursive;
+  }
+}
 
-
-    .guessLines {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      font-family: 'Caveat', cursive;
-    }
+@media screen and (max-width: 450px) {
+  .guessLines {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-family: 'Caveat', cursive;
+    margin-right: 145%;
+  }
+}
   
 
 @media screen and (max-width: 450px) {
