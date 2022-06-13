@@ -106,7 +106,13 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
-  width: 100%; 
+}
+
+@media screen and (max-width: 450px) {
+  .lettersBoard {
+    margin-bottom: 10px;
+    width: 80%; 
+  }
 }
 
 .rightLetter {
