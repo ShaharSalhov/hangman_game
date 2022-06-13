@@ -23,7 +23,6 @@ html {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
 }
 
 @media screen and (max-width: 450px) { 
@@ -36,119 +35,79 @@ html {
 
 @media screen and (min-width: 451px) { 
   .upperPart {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
+.graphBoard {
+  height: 50%;
+}
+
+@media screen and (min-width: 451px) {
   .graphBoard {
-    width: 50%;
-    height: 50%;
+      width: 40%;
+    }
   }
-
-  .img {
-    border: 4px solid black;
-    width: 100%;
+  
+@media screen and (max-width: 450px) {
+  .graphBoard {
+      width: 50%;
   }
+}
+
+.img {
+  border: 4px solid black;
+  border-radius: 5px;
+  width: 90%;
+}
 
 
+.subjectBoard {
+  flex-wrap: wrap;
+}
 
-
-
-
-
-
-/* @media screen and (min-width: 451px) {
+@media screen and (min-width: 451px) {
   .subjectBoard {
-    width: 60%;
-    height: 60%;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 70px;
+     font-size: 90px; 
   }
 }
 
 @media screen and (max-width: 450px) {
   .subjectBoard {
-    width: 60%;
-    height: 60%;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 40px;
-
-  }
-}   */
-
-
-
-
-
-
-@media screen and (max-width: 450px) {
-  .guessBoard {
-    font-size: 45px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 5px;
+    font-size: 30px; 
     width: 30%;
   }
+}  
+
+.guessLines {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-family: 'Caveat', cursive;
+  justify-content: center;
 }
 
 @media screen and (min-width: 451px) {
-  .guessBoard {
-    font-size: 65px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    height: 60%;
-    padding: 10px;
-    width: 60%;
-  }
-}
-@media screen and (min-width: 451px) {
   .guessLines {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    font-family: 'Caveat', cursive;
+    font-size: 80px;
+    margin: -90px;
   }
 }
 
 @media screen and (max-width: 450px) {
   .guessLines {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    font-family: 'Caveat', cursive;
-    margin-right: 145%;
+    font-size: 50px;
+
   }
 }
   
-
-@media screen and (max-width: 450px) {
-  .lettersBoard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    width: 100%; 
-  }
+.lettersBoard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 100%; 
 }
-
-@media screen and (min-width: 451px) {
-    .lettersBoard {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: auto;
-      width: 60%; 
-    }
-  }
-
 
 .rightLetter {
   color: green;
@@ -162,25 +121,25 @@ html {
   color: black;
 }
 
+.lettersButtons {
+  font-family: 'Caveat', cursive;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 450px) {
   .lettersButtons {
-    font-family: 'Caveat', cursive;
     font-size: 28px;
-    font-weight: bolder;
     padding: 5px;
     margin: 1px;
-    border-radius: 5px;
   }
 }
 
 @media screen and (min-width: 451px) {
   .lettersButtons {
-    font-family: 'Caveat', cursive;
     font-size: 32px;
-    font-weight: bolder;
     padding: 10px;
     margin: 5px;
-    border-radius: 5px;
   }
 }
 

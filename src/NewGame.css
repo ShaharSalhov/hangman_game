@@ -18,3 +18,10 @@
 .newGameButton:hover {
   opacity: 1
 }
+
+
+@media screen and (min-width: 451px) {
+  .newGameButton {
+   width: 180px;
+  }
+}

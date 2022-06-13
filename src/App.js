@@ -171,8 +171,6 @@ function App() {
           ) ) 
         }
       </div>
-
-      <NewGameButton onClick={newGameClicking} />
       
       <div className='lettersBoard'>
 
@@ -196,6 +194,8 @@ function App() {
         ) )}
         
       </div>
+
+      <NewGameButton onClick={newGameClicking} />
 
     </div>
   );
