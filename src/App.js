@@ -79,16 +79,16 @@ function App() {
     const [keyPressed, setKeyPressed] = React.useState(false);
 
     const useKeyPress = targetKey => {
-    
-      const downHandler = ({ key }) => {
-        if (key === targetKey) setKeyPressed(true);
-      };
-    
-      const upHandler = ({ key }) => {
-        if (key === targetKey) setKeyPressed(false);
-      };
-    
       React.useEffect(() => {
+
+        const downHandler = ({ key }) => {
+          if (key === targetKey) setKeyPressed(true);
+        };
+      
+        const upHandler = ({ key }) => {
+          if (key === targetKey) setKeyPressed(false);
+        };
+    
         window.addEventListener('keydown', downHandler);
         window.addEventListener('keyup', upHandler);
     
@@ -96,7 +96,7 @@ function App() {
           window.removeEventListener('keydown', downHandler);
           window.removeEventListener('keyup', upHandler);
         };
-      }, [upHandler, downHandler]);
+      }, [targetKey]);
     
       return keyPressed;
     };
