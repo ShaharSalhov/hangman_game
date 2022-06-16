@@ -193,6 +193,7 @@ function App() {
 
             
       <div className='guessLines'>
+
         {
           chosenWord.split("").map( (l, i) => (
 
@@ -202,6 +203,7 @@ function App() {
 
           ) ) 
         }
+
       </div>
       
       <div className='lettersBoard'>
@@ -226,8 +228,11 @@ function App() {
         ) )}
         
       </div>
-
-      <NewGameButton onClick={newGameClicking} />
+      
+      <div>
+        <a href="https://github.com/ShaharSalhov/hangman_game" class="githubbutton" target="_blank"></a>
+        <NewGameButton onClick={newGameClicking} />
+      </div>
 
     </div>
   );
