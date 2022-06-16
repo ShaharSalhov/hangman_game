@@ -234,6 +234,7 @@ function App() {
          href="https://github.com/ShaharSalhov/hangman_game" 
          class="githubbutton" 
          target="_blank"
+         rel="noreferrer"
          style={{
            backgroundImage: `url(${myPackageJson.homepage}/pics/icon-github-28.jpeg)`
           }}
