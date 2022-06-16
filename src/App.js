@@ -64,6 +64,8 @@ function App() {
   const newGameClicking = () => {
     setClickedLetters([]);
     gettingRandomWordAndSubject()
+    setKeyPressed(false)
+    setShow(false)
   }
 
   const handleKeyPress = (event) => {
@@ -74,7 +76,37 @@ function App() {
       return [...existingClickedLetters, event.key]
       })
     }
+    const [keyPressed, setKeyPressed] = React.useState(false);
 
+    const useKeyPress = targetKey => {
+    
+      const downHandler = ({ key }) => {
+        if (key === targetKey) setKeyPressed(true);
+      };
+    
+      const upHandler = ({ key }) => {
+        if (key === targetKey) setKeyPressed(false);
+      };
+    
+      React.useEffect(() => {
+        window.addEventListener('keydown', downHandler);
+        window.addEventListener('keyup', upHandler);
+    
+        return () => {
+          window.removeEventListener('keydown', downHandler);
+          window.removeEventListener('keyup', upHandler);
+        };
+      }, []);
+    
+      return keyPressed;
+    };
+
+    const enterPressed = useKeyPress("Enter")
+  
+    if (show && enterPressed) {
+      newGameClicking()
+    }
+    
 
   React.useEffect( () => {
     gettingRandomWordAndSubject()
