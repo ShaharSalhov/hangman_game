@@ -230,8 +230,17 @@ function App() {
       </div>
       
       <div>
-        <a href="https://github.com/ShaharSalhov/hangman_game" class="githubbutton" target="_blank"></a>
+        <a
+         href="https://github.com/ShaharSalhov/hangman_game" 
+         class="githubbutton" 
+         target="_blank"
+         style={{
+           backgroundImage: `url(${myPackageJson.homepage}/pics/icon-github-28.jpeg)`
+          }}
+          >
+        </a>
         <NewGameButton onClick={newGameClicking} />
+
       </div>
 
     </div>
