@@ -17,6 +17,14 @@ const vocabulary = [
     subject: "drinks",
     words: ["water", "soda", "juice", "wine", "coffee", "lemonade", "iced tea", "hot chocolate", "milkshake"],
   },
+  {
+    subject: "animals",
+    words: ["ant", "bat", "bear", "bird", "camel", "cat", "cow", "deer", "dog", "duck", "eagel", "elephant", "fox", "giraffe", "horse", "hyena", "leopard", "lion", "lynx", "monkey", "mouse", "otter", "panda", "polar bear", "raccoon", "sea lion", "seal", "sheep", "snake", "tiger", "wolf", "zebra"]
+  },
+  {
+    subject: "body",
+    words: ["ankle", "arm", "back", "brain", "cheek", "chin", "ear", "ear", "elbow", "eye", "face", "finger", "foot", "forehead", "hair", "hand", "head", "heart", "jaw", "knee", "leg", "liver", "lung", "lungs", "mouth", "neck", "nose", "stomach", "teeth", "throat", "toes", "tongue", "tooth"]
+  }
 ]
 
 const allLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
