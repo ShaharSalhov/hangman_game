@@ -18,6 +18,7 @@
   align-items: center;
   background-color: #252626;
   border-radius: 5px;
+  color: white;
 }
 
 
@@ -38,3 +39,5 @@
     padding: 10px;
    }
 }
+
+ 

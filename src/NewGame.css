@@ -1,18 +1,21 @@
 .newGameButton {
-  background-color: #f4511e;
+  /* background-color: #f4511e; */
+  background-color: #a46c6c;
   border: none;
   border-radius: 5px;
   color: white;
-  padding: 16px 32px;
+  padding: 6px 4px;
   text-align: center;
   font-size: 20px;
-  margin: 4px 2px;
-  opacity: 0.6;
+  margin: 4px 3px;
+  opacity: 0.8;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
   font-family: 'Caveat', cursive;
+  
+
 }
 
 .newGameButton:hover {
@@ -22,7 +25,7 @@
 
 @media screen and (min-width: 451px) {
   .newGameButton {
-   width: 180px;
+   font-weight: 800;
   }
 }
 

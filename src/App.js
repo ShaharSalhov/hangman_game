@@ -130,32 +130,32 @@ function App() {
 
         switch(numberOfErrors) {
           case 0:
-            setImgSrc(`${myPackageJson.homepage}/pics/0.png`)  
+            setImgSrc(`${myPackageJson.homepage}/pics/000.png`)  
             break; 
     
           case 1:
-            setImgSrc(`${myPackageJson.homepage}/pics/1.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/001.png`) 
             break; 
     
           case 2:
-            setImgSrc(`${myPackageJson.homepage}/pics/2.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/002.png`) 
             break; 
     
           case 3:
-            setImgSrc(`${myPackageJson.homepage}/pics/3.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/003.png`) 
             break; 
     
           case 4:
-            setImgSrc(`${myPackageJson.homepage}/pics/4.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/004.png`) 
             break; 
     
           case 5:
-            setImgSrc(`${myPackageJson.homepage}/pics/5.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/005.png`) 
             break; 
     
           default:
             setShow(true);
-            setImgSrc(`${myPackageJson.homepage}/pics/6.png`) 
+            setImgSrc(`${myPackageJson.homepage}/pics/006.png`) 
         }
       }
     
@@ -176,6 +176,25 @@ function App() {
         title="GAME OVER" 
       />
 
+      <header>
+
+        <a
+         href="https://github.com/ShaharSalhov/hangman_game" 
+         className="githubbutton" 
+         target="_blank"
+         rel="noreferrer"
+         style={{
+           backgroundImage: `url(${myPackageJson.homepage}/pics/icon-github-28.jpeg)`
+          }}
+          >
+        </a>
+
+        <NewGameButton onClick={newGameClicking} />
+
+      </header>
+
+
+
       <div className='upperPart'>
 
         <div className='graphBoard'>
@@ -186,10 +205,11 @@ function App() {
 
         <div id="subjectBoard" className='subjectBoard'>
 
-            <p>subject: {chosenSubject} </p>
+            <p>subject: <br /> {chosenSubject} </p>
         </div>
 
        </div>
+
 
             
       <div className='guessLines'>
@@ -205,6 +225,8 @@ function App() {
         }
 
       </div>
+
+
       
       <div className='lettersBoard'>
 
@@ -227,21 +249,6 @@ function App() {
           </button> 
         ) )}
         
-      </div>
-      
-      <div>
-        <a
-         href="https://github.com/ShaharSalhov/hangman_game" 
-         class="githubbutton" 
-         target="_blank"
-         rel="noreferrer"
-         style={{
-           backgroundImage: `url(${myPackageJson.homepage}/pics/icon-github-28.jpeg)`
-          }}
-          >
-        </a>
-        <NewGameButton onClick={newGameClicking} />
-
       </div>
 
     </div>

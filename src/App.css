@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Indie+Flower&family=Montserrat:wght@100&family=Orelega+One&family=Sunflower&display=swap');
 
+
+
+
+
 html { 
-  background: url("../public/pics/board3.jpeg") fixed center no-repeat ; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #d4a0a0 ; 
   display: flex;
   justify-content: center;
 }
@@ -15,14 +15,27 @@ html {
   flex-direction: column;
   gap: 10px;
   font-family: 'Caveat', cursive;
-  color: white;
+  font-weight: 500;
+  color: #333b40;
+}
+
+header {
+  position: fixed;
+  width:100%;
+  background-color: #333b40;
+  height: 8%;
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
 }
 
 .upperPart {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+  padding-top: 50px;
 }
 
 @media screen and (max-width: 450px) { 
@@ -51,16 +64,14 @@ html {
   
 @media screen and (max-width: 450px) {
   .graphBoard {
-      width: 50%;
+      width: 70%;
   }
 }
 
 .img {
-  border: 4px solid black;
   border-radius: 5px;
-  width: 90%;
+  width: 85%;
 }
-
 
 .subjectBoard {
   flex-wrap: wrap;
@@ -90,7 +101,7 @@ html {
 @media screen and (min-width: 451px) {
   .guessLines {
     font-size: 80px;
-    margin: -90px;
+    margin: -80px;
   }
 }
 
@@ -158,10 +169,16 @@ html {
   background-size: 400%;
   background-repeat: no-repeat;
   border-radius: 50%;
-  border: solid 1px black;
+  border: solid 2px black;
   width: 50px;
   height: 50px;
   background-position: center;   
-  float: left;
+  margin: 3px;
 }
 
+@media screen and (max-width: 450px) {
+  .githubbutton {
+    margin: -2px;
+    margin-right: 2px;
+  }
+}
